@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Course Outline Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📘 AI Course Outline Generator</h1>
+      <p class="sub">Generate professional academic syllabi in seconds</p>
+    </header>
+
+    <section class="card">
+      <h2>Course Details</h2>
+      <div class="grid">
+        <label>Course Title
+          <input id="title" placeholder="e.g., Data Structures & Algorithms" />
+        </label>
+        <label>Level
+          <select id="level">
+            <option>Undergraduate</option>
+            <option>Postgraduate</option>
+            <option>Professional/Bootcamp</option>
+          </select>
+        </label>
+        <label>Duration (weeks)
+          <input id="weeks" type="number" min="1" value="12" />
+        </label>
+        <label>Sessions / week
+          <input id="sessions" type="number" min="1" value="2" />
+        </label>
+      </div>
+
+      <div class="grid">
+        <label>Target Audience
+          <input id="audience" placeholder="e.g., 3rd-year CSE students" />
+        </label>
+        <label>Prerequisites
+          <input id="prereq" placeholder="e.g., Basic Python & Discrete Math" />
+        </label>
+      </div>
+
+      <label>Primary Topics
+        <textarea id="topics" rows="2" placeholder="Arrays, Linked Lists, Trees, Graphs"></textarea>
+      </label>
+
+      <label>Learning Objectives
+        <textarea id="objectives" rows="2" placeholder="Analyze algorithm complexity, Design efficient structures"></textarea>
+      </label>
+
+      <div class="row">
+        <button id="generate">✨ Generate Outline</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Generated Outline</h2>
+      <div id="status" class="status">Waiting for input...</div>
+      <div id="output" class="output"></div>
+      <div class="row">
+        <button id="copy">Copy</button>
+        <button id="download">Download</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- marked.js for Markdown → HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
